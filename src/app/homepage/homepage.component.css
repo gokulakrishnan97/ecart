@@ -1,0 +1,22 @@
+.header {
+  max-width: 100%;
+  background-color: #ff4d94;
+  text-align: center;
+}
+
+.header h2 {
+  color: white;
+}
+
+.food {
+  margin-top: 10px;
+}
+
+.food img {
+  float: left;
+}
+
+.food p {
+  float: left;
+}
+
