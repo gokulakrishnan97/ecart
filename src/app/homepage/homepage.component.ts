@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FooditemService } from '../fooditem.service';
-import foodItems from '../assests/foodlist.json';
-
 
 @Component({
   selector: 'app-homepage',
@@ -9,15 +7,15 @@ import foodItems from '../assests/foodlist.json';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
   foods: any;
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private foodItem: FooditemService) {
+    
   }
-
-  foods = foodItems;
- // console.log(foods);
-
- 
+  ngOnInit() {
+    let url = 'http://localhost:3000/foods'
+    this.foodItem.getAllFoods(url) .subscribe((data) =>  {
+        console.log(data);
+        this.foods = data;
+    });
+  }
 }
